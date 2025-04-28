@@ -1,15 +1,16 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import Link from "next/link"
-import { Github, Twitter, FileText } from "lucide-react"
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { Github, Twitter, FileText } from "lucide-react";
+import Logo from "@/components/atoms/logo";
 
 export default function FooterSection() {
   const footerLinks = [
     { name: "Docs", href: "#", icon: FileText },
     { name: "GitHub", href: "#", icon: Github },
-    { name: "Twitter", href: "#", icon: Twitter },
-  ]
+    { name: "Twitter", href: "#", icon: Twitter }
+  ];
 
   return (
     <footer className="bg-card border-t border-border">
@@ -21,11 +22,10 @@ export default function FooterSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600">
-              DynamicVault
-            </h3>
+            <Logo size="lg" className="mb-4" />
             <p className="text-muted-foreground">
-              Revolutionizing the valuation and trading of tokenized real-world assets through advanced AI technology.
+              Revolutionizing the valuation and trading of tokenized real-world
+              assets through advanced AI technology.
             </p>
           </motion.div>
 
@@ -41,17 +41,26 @@ export default function FooterSection() {
                 <h4 className="font-semibold mb-4">Platform</h4>
                 <ul className="space-y-2">
                   <li>
-                    <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                    <Link
+                      href="#"
+                      className="text-muted-foreground hover:text-teal-accent transition-colors"
+                    >
                       Features
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                    <Link
+                      href="#"
+                      className="text-muted-foreground hover:text-teal-accent transition-colors"
+                    >
                       How It Works
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                    <Link
+                      href="#"
+                      className="text-muted-foreground hover:text-teal-accent transition-colors"
+                    >
                       Pricing
                     </Link>
                   </li>
@@ -62,17 +71,26 @@ export default function FooterSection() {
                 <h4 className="font-semibold mb-4">Resources</h4>
                 <ul className="space-y-2">
                   <li>
-                    <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                    <Link
+                      href="#"
+                      className="text-muted-foreground hover:text-teal-accent transition-colors"
+                    >
                       Documentation
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                    <Link
+                      href="#"
+                      className="text-muted-foreground hover:text-teal-accent transition-colors"
+                    >
                       API
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                    <Link
+                      href="#"
+                      className="text-muted-foreground hover:text-teal-accent transition-colors"
+                    >
                       Blog
                     </Link>
                   </li>
@@ -83,17 +101,26 @@ export default function FooterSection() {
                 <h4 className="font-semibold mb-4">Company</h4>
                 <ul className="space-y-2">
                   <li>
-                    <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                    <Link
+                      href="#"
+                      className="text-muted-foreground hover:text-teal-accent transition-colors"
+                    >
                       About
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                    <Link
+                      href="#"
+                      className="text-muted-foreground hover:text-teal-accent transition-colors"
+                    >
                       Team
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                    <Link
+                      href="#"
+                      className="text-muted-foreground hover:text-teal-accent transition-colors"
+                    >
                       Contact
                     </Link>
                   </li>
@@ -111,7 +138,8 @@ export default function FooterSection() {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <p className="text-muted-foreground text-sm mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} DynamicVault: AI-Priced RWA Tokenization Platform. All rights reserved.
+            &copy; {new Date().getFullYear()} DynamicVault: AI-Priced RWA
+            Tokenization Platform. All rights reserved.
           </p>
 
           <div className="flex space-x-4">
@@ -119,7 +147,7 @@ export default function FooterSection() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-muted-foreground hover:text-foreground transition-colors flex items-center"
+                className="text-muted-foreground hover:text-teal-accent transition-colors flex items-center"
               >
                 <link.icon className="h-5 w-5 mr-2" />
                 {link.name}
@@ -129,5 +157,5 @@ export default function FooterSection() {
         </motion.div>
       </div>
     </footer>
-  )
+  );
 }

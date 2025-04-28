@@ -1,21 +1,26 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import Image from "next/image"
-import { Badge } from "@/components/atoms/badge"
-import type { Asset } from "@/lib/types"
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { Badge } from "@/components/atoms/badge";
+import type { Asset } from "@/lib/types";
 
 interface AssetCardProps {
-  asset: Asset
-  index: number
+  asset: Asset;
+  index: number;
 }
 
 export default function AssetCard({ asset, index }: AssetCardProps) {
-  const confidenceVariant = asset.aiConfidence >= 80 ? "high" : asset.aiConfidence >= 50 ? "medium" : "low"
+  const confidenceVariant =
+    asset.aiConfidence >= 80
+      ? "high"
+      : asset.aiConfidence >= 50
+      ? "medium"
+      : "low";
 
   return (
     <motion.div
-      className="flex flex-col bg-card rounded-lg overflow-hidden shadow-lg border border-border hover:shadow-xl transition-shadow duration-300"
+      className="flex flex-col dv-card overflow-hidden"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -42,11 +47,17 @@ export default function AssetCard({ asset, index }: AssetCardProps) {
         <div className="flex justify-between items-center">
           <div>
             <p className="text-sm text-muted-foreground">Current Price</p>
-            <p className="text-xl font-bold text-blue-500">{asset.price} ETH</p>
+            <p className="text-xl font-bold text-teal-accent">
+              {asset.price} ETH
+            </p>
           </div>
           <div>
             <p className="text-sm text-muted-foreground">24h Change</p>
-            <p className={`text-sm font-semibold ${asset.priceChange >= 0 ? "text-green-500" : "text-red-500"}`}>
+            <p
+              className={`text-sm font-semibold ${
+                asset.priceChange >= 0 ? "text-success-green" : "text-alert-red"
+              }`}
+            >
               {asset.priceChange >= 0 ? "+" : ""}
               {asset.priceChange}%
             </p>
@@ -54,5 +65,5 @@ export default function AssetCard({ asset, index }: AssetCardProps) {
         </div>
       </div>
     </motion.div>
-  )
+  );
 }

@@ -8,6 +8,7 @@ import Link from "next/link"
 import { Menu, X, Moon, Sun } from "lucide-react"
 import { Button } from "@/components/atoms/button"
 import { useTheme } from "next-themes"
+import Logo from "@/components/atoms/logo"
 
 interface PublicLayoutProps {
   children: React.ReactNode
@@ -44,11 +45,7 @@ export default function PublicLayout({ children }: PublicLayoutProps) {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <Link href="/" className="flex items-center">
-              <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600">
-                DynamicVault
-              </span>
-            </Link>
+            <Logo />
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
@@ -56,7 +53,7 @@ export default function PublicLayout({ children }: PublicLayoutProps) {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-foreground/80 hover:text-foreground transition-colors"
+                  className="text-foreground/80 hover:text-teal-accent transition-colors font-medium"
                 >
                   {link.name}
                 </Link>
@@ -70,7 +67,7 @@ export default function PublicLayout({ children }: PublicLayoutProps) {
                   variant="ghost"
                   size="icon"
                   onClick={toggleTheme}
-                  className="rounded-full"
+                  className="rounded-full hover:bg-teal-accent/10"
                   aria-label="Toggle theme"
                 >
                   <AnimatePresence mode="wait" initial={false}>
@@ -88,7 +85,7 @@ export default function PublicLayout({ children }: PublicLayoutProps) {
                 </Button>
               )}
 
-              <Button variant="ghost" size="icon" onClick={toggleMobileMenu} className="md:hidden rounded-full">
+              <Button variant="ghost" size="icon" onClick={toggleMobileMenu} className="md:hidden rounded-full hover:bg-teal-accent/10">
                 {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
                 <span className="sr-only">Toggle menu</span>
               </Button>
@@ -118,7 +115,7 @@ export default function PublicLayout({ children }: PublicLayoutProps) {
                   >
                     <Link
                       href={link.href}
-                      className="text-2xl font-semibold"
+                      className="text-2xl font-semibold hover:text-teal-accent transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {link.name}

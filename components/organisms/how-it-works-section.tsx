@@ -1,34 +1,38 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Wallet, Brain, LineChart, ShoppingCart } from "lucide-react"
+import { motion } from "framer-motion";
+import { Wallet, Brain, LineChart, ShoppingCart } from "lucide-react";
 
 const steps = [
   {
     title: "Connect Wallet",
-    description: "Connect your crypto wallet to access the platform and your digital assets.",
+    description:
+      "Connect your crypto wallet to access the platform and your digital assets.",
     icon: Wallet,
-    color: "bg-blue-500",
+    color: "bg-deep-navy"
   },
   {
     title: "AI Analysis",
-    description: "Our AI engine analyzes market data and asset characteristics to determine fair pricing.",
+    description:
+      "Our AI engine analyzes market data and asset characteristics to determine fair pricing.",
     icon: Brain,
-    color: "bg-purple-500",
+    color: "bg-teal-accent"
   },
   {
     title: "On-Chain Pricing",
-    description: "Transparent pricing data is recorded on-chain for verification and trust.",
+    description:
+      "Transparent pricing data is recorded on-chain for verification and trust.",
     icon: LineChart,
-    color: "bg-pink-500",
+    color: "bg-ocean-blue"
   },
   {
     title: "Buy & Sell",
-    description: "Trade assets with confidence knowing you're getting AI-verified fair market prices.",
+    description:
+      "Trade assets with confidence knowing you're getting AI-verified fair market prices.",
     icon: ShoppingCart,
-    color: "bg-green-500",
-  },
-]
+    color: "bg-success-green"
+  }
+];
 
 export default function HowItWorksSection() {
   return (
@@ -43,13 +47,14 @@ export default function HowItWorksSection() {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">How It Works</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Our streamlined process makes it easy to get accurate valuations and trade with confidence.
+            Our streamlined process makes it easy to get accurate valuations and
+            trade with confidence.
           </p>
         </motion.div>
 
         <div className="relative max-w-4xl mx-auto">
           {/* Connecting line */}
-          <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 transform -translate-y-1/2 hidden md:block" />
+          <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-deep-navy via-teal-accent to-ocean-blue transform -translate-y-1/2 hidden md:block" />
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {steps.map((step, index) => (
@@ -76,5 +81,5 @@ export default function HowItWorksSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

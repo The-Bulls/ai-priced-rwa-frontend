@@ -1,17 +1,19 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { Wallet } from "lucide-react"
-import { Button } from "@/components/atoms/button"
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Wallet } from "lucide-react";
+import { Button } from "@/components/atoms/button";
 
 export default function ConnectWalletButton() {
-  const [isHovered, setIsHovered] = useState(false)
+  const [isHovered, setIsHovered] = useState(false);
 
   const handleConnect = () => {
     // This would trigger the SIWE flow in a real implementation
-    alert("This would connect to MetaMask or WalletConnect and redirect to /dashboard")
-  }
+    alert(
+      "This would connect to MetaMask or WalletConnect and redirect to /dashboard"
+    );
+  };
 
   return (
     <motion.div
@@ -24,6 +26,7 @@ export default function ConnectWalletButton() {
       <Button
         variant="wallet"
         size="xl"
+        aria-label="Connect your wallet"
         className="relative overflow-hidden"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -42,5 +45,5 @@ export default function ConnectWalletButton() {
         )}
       </Button>
     </motion.div>
-  )
+  );
 }

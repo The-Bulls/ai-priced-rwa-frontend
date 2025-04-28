@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
@@ -7,7 +7,7 @@ const config = {
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
-    "*.{js,ts,jsx,tsx,mdx}",
+    "*.{js,ts,jsx,tsx,mdx}"
   ],
   prefix: "",
   theme: {
@@ -15,10 +15,14 @@ const config = {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
-      },
+        "2xl": "1400px"
+      }
     },
     extend: {
+      fontFamily: {
+        montserrat: ["var(--font-montserrat)", "Montserrat", "sans-serif"],
+        inter: ["var(--font-inter)", "Inter", "sans-serif"]
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -27,81 +31,90 @@ const config = {
         foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          foreground: "hsl(var(--primary-foreground))"
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          foreground: "hsl(var(--secondary-foreground))"
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
+          foreground: "hsl(var(--destructive-foreground))"
         },
         muted: {
           DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
+          foreground: "hsl(var(--muted-foreground))"
         },
         accent: {
           DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+          foreground: "hsl(var(--accent-foreground))"
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
+          foreground: "hsl(var(--popover-foreground))"
         },
         card: {
           DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
+          foreground: "hsl(var(--card-foreground))"
         },
+        // DynamicVault Brand Colors
+        "deep-navy": "hsl(var(--deep-navy))",
+        "teal-accent": "hsl(var(--teal-accent))",
+        "ocean-blue": "hsl(var(--ocean-blue))",
+        "light-gray": "hsl(var(--light-gray))",
+        slate: "hsl(var(--slate))",
+        "soft-white": "hsl(var(--soft-white))",
+        "alert-red": "hsl(var(--alert-red))",
+        "success-green": "hsl(var(--success-green))",
         // Custom theme colors
         midnight: {
           DEFAULT: "hsl(var(--midnight-blue))",
-          light: "hsl(var(--midnight-blue-light))",
+          light: "hsl(var(--midnight-blue-light))"
         },
         neon: {
           blue: "hsl(var(--neon-blue))",
           purple: "hsl(var(--neon-purple))",
-          pink: "hsl(var(--neon-pink))",
-        },
+          pink: "hsl(var(--neon-pink))"
+        }
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        sm: "calc(var(--radius) - 4px)"
       },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "var(--radix-accordion-content-height)" }
         },
         "accordion-up": {
           from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
+          to: { height: "0" }
         },
         float: {
           "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-10px)" },
+          "50%": { transform: "translateY(-10px)" }
         },
         "pulse-glow": {
           "0%, 100%": {
             opacity: "1",
-            filter: "brightness(1)",
+            filter: "brightness(1)"
           },
           "50%": {
             opacity: "0.8",
-            filter: "brightness(1.2)",
-          },
-        },
+            filter: "brightness(1.2)"
+          }
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         float: "float 6s ease-in-out infinite",
-        "pulse-glow": "pulse-glow 3s ease-in-out infinite",
-      },
-    },
+        "pulse-glow": "pulse-glow 3s ease-in-out infinite"
+      }
+    }
   },
-  plugins: [require("tailwindcss-animate")],
-} satisfies Config
+  plugins: [require("tailwindcss-animate")]
+} satisfies Config;
 
-export default config
+export default config;

@@ -1,39 +1,39 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import ConnectWalletButton from "@/components/molecules/connect-wallet-button"
+import { motion } from "framer-motion";
+import ConnectWalletButton from "@/components/molecules/connect-wallet-button";
 
 export default function HeroSection() {
   return (
     <section className="relative py-20 md:py-32 overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-blue-900/10 dark:to-blue-900/20 -z-10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-teal-accent/5 dark:to-teal-accent/10 -z-10" />
 
       {/* Animated background elements */}
       <motion.div
-        className="absolute top-20 right-10 w-64 h-64 rounded-full bg-blue-500/5 blur-3xl"
+        className="absolute top-20 right-10 w-64 h-64 rounded-full bg-teal-accent/5 blur-3xl"
         animate={{
           scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
+          opacity: [0.3, 0.5, 0.3]
         }}
         transition={{
           duration: 8,
           repeat: Number.POSITIVE_INFINITY,
-          repeatType: "reverse",
+          repeatType: "reverse"
         }}
       />
 
       <motion.div
-        className="absolute bottom-20 left-10 w-72 h-72 rounded-full bg-purple-500/5 blur-3xl"
+        className="absolute bottom-20 left-10 w-72 h-72 rounded-full bg-ocean-blue/5 blur-3xl"
         animate={{
           scale: [1, 1.3, 1],
-          opacity: [0.2, 0.4, 0.2],
+          opacity: [0.2, 0.4, 0.2]
         }}
         transition={{
           duration: 10,
           repeat: Number.POSITIVE_INFINITY,
           repeatType: "reverse",
-          delay: 1,
+          delay: 1
         }}
       />
 
@@ -46,7 +46,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600">
+            <span className="dv-gradient-text">
               Real-Time AI-Pricing for Tokenized Art & Collectibles
             </span>
           </motion.h1>
@@ -57,13 +57,14 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Unlock the true value of your digital assets with our cutting-edge AI pricing engine. Get real-time
-            valuations, dynamic liquidity, and fractional ownership opportunities.
+            Unlock the true value of your digital assets with our cutting-edge
+            AI pricing engine. Get real-time valuations, dynamic liquidity, and
+            fractional ownership opportunities.
           </motion.p>
 
           <ConnectWalletButton />
         </div>
       </div>
     </section>
-  )
+  );
 }
